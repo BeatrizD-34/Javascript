@@ -20,3 +20,24 @@ function calculateTotal(){
     document.getElementById('totalAmount').textContent = 'totalAmount';
 }
 
+let count =0;
+
+function displayCount(){
+    document.getElementById('followersCount').innerText = count;
+}
+
+document.getElementById('followButton').addEventListener('click',() => {
+   count++;
+   displayCount();
+   if (count ==10) {
+    alert('Congratulations! you have reached 10 followers.');
+   } 
+});
+
+function resetCount() {
+    count = 0;
+    displayCount();
+    alert('Followers count has been reset.');
+}
+
+document.getElementById('resetButton').addEventListener('click', resetCount);
