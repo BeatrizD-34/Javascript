@@ -38,3 +38,23 @@ function clearInputs() {
     document.getElementById('pagesNumber').value = '';
 }
 
+function deletebook() {
+    books.splice(index, 1);
+    showbooks();
+}
+
+function showBooks() {
+    const bookList = document.getElementById('');
+    bookList.innerHTML = '';
+
+    books.forEach((book, index) => {
+        const bookItem = document.createElement('');
+        bookItem.innerHTML = `
+        <p>${book.title} by ${book.author}<P>
+        <button onclick="deletebook(${index})">Delete</button>
+        `;
+
+    });
+}
+
+showBooks();
