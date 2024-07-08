@@ -49,3 +49,25 @@ var button = document.getElementById("btn");
 button.innerHTML = "Start Test";
 button.onclick = startTest;
 }
+
+function endtest() {
+    var endtime = new Date().getTime();
+var timeElapsed = (endTime - startTime) / 1000;
+
+var userTypedText = document.getElementById("userInput").value;
+var typedWords = userTypedText.split(/\s+/).filter(function (word) { return word !==""; }).length;
+var textLength = userTypedText.length;
+
+var wpm = (typedWords / timeElapsed) * 60;
+
+
+var outputDiv = document.getElementById("output");
+outputDiv.innerHtml = "<h2>Typing Test Result:</h2>" +
+"<p>Words Typed: " + typedwords + "</P>" +
+"<p>Text Length: " + textLength + " characters</p>" +
+"<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
+"<p>Words Per Minute: (WPM): " + wpm.toFixed(2) + "</p>";
+
+var button = document.getElementById("btn");
+button.innerHTML = "Start Test";
+}
