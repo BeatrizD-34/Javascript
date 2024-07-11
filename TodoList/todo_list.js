@@ -37,7 +37,27 @@ function clearCompletedTasks() {
     displayTasks();
 }
 
+function clearAllTasks() {
+    tasks = [];
+    displayTasks();
+}
+
+function displayTasks() {
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = '';
+
+    tasks.forEach(task => {
+        const taskItem = document.createElement('li');
+        taskItem.textContent = task.text;
+        taskList.appendChild(taskItem);
+    });
+}
+
+
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
-
+document.getElementById('clearAllTasksBtn').addEventListener('click', clearAllTasks);
 displayTasks();
+
+
+
