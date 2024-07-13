@@ -1,4 +1,4 @@
-const colors = [ 'red', 'blue','green','purple','ornage','pink','red','blue','green','purple','ornage','pink'];
+const colors = [ 'red', 'blue','green','purple','orange','pink','red','blue','green','purple','orange','pink'];
 let cards = shuffle(colors.concat(colors));
 let selectedCards = [];
 let score = 0;
